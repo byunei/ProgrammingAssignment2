@@ -16,32 +16,32 @@
 makeCacheMatrix <- function(x = matrix()) {
     # raise error if x is not a matrix
     if (class(x) != "matrix") stop()
-    
+
     # initialize inverse
     inv <- NULL
-    
+
     # sets a new value for the matrix; resets inverse to NULL.
     set <- function(y) {
-        
+
         # raise error if x is not a matrix
         if (class(x) != "matrix") stop()
-        
+
         # set new matrix value
         x <<- y
-        
+
         # when matrix is re-set, inv is reset to NULL
         inv <<- NULL
     }
-    
+
     # returns matrix
     get <- function() x
-        
+
     # caches new inverse
     set_inverse <- function(inverse) {
         # The inverse of a matrix must be a matrix.
         # raise error if x is not a matrix.
         if (class(x) != "matrix") stop()
-        
+
         inv <<- inverse
     }
 
